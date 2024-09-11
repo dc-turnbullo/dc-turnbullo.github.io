@@ -17,6 +17,7 @@
 <form name="question">
 <p id="box">Question - How long was the Tully Monster?</p> 
 answer: <input type="text" name = "answer">
+<button type="button" onclick="validate()">Show answer</button>
 
 <p id="box2">Click to find out where it lived.</p>
 <button type="button" onclick="document.getElementById('box2').innerHTML = 'The Tully Monster lived in the tropical region of south america.'">Show answer</button>
@@ -27,6 +28,10 @@ answer: <input type="text" name = "answer">
 		if (x == ""){
 			document.getElementById("box").style.color="red";
 		}
+		else if (x=="35cm"){
+			alert("Correct!")
+		}
+		
 	}
 </script>
 </body>
