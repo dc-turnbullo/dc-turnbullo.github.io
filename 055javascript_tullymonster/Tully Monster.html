@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+	<title>The Tully Monster</title>
+	<style>
+		body {font-family: arial, "sans-serif";}
+	</style>
+</head>
+<body>
+
+<h1>The Tully Monster</h1>
+
+<p>The Tully Monster is a fossilised creature believed to have lived 300 million years ago. It was discovered by and named after Francis Tully in 1958.</p>
+
+<img src="TullyMonster.png" alt = "picture of TullyMonster">
+
+<form name="question">
+<p id="box">Question - How long was the Tully Monster?</p> 
+answer: <input type="text" name = "answer">
+
+<p id="box2">Click to find out where it lived.</p>
+<button type="button" onclick="document.getElementById('box2').innerHTML = 'The Tully Monster lived in the tropical region of south america.'">Show answer</button>
+</form>
+<script>
+	function validate(){
+		var x = document.forms["question"]["answer"].value;
+		if (x == ""){
+			document.getElementById("box").style.color="red";
+		}
+	}
+</script>
+</body>
+</html>
