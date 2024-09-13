@@ -1,0 +1,52 @@
+<!-- Copyright (C) 2016 PG Online Ltd -->
+
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+	<title>Roll the dice</title>
+	<style>
+		body, input { font-family: Arial, Helvetica, "sans-serif"; font-size: 15px; }
+		body { text-align:center; }
+	</style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Matthew Montgomery</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">1700.00000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Matthew Montgomery</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ReferenceId msdt:dt="string"></mso:ReferenceId>
+<mso:ContentTypeId msdt:dt="string">0x010100B699FA792B00854894EC91F7CAF32A7D</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+<h1>Dice Roll</h1>
+
+
+<form>
+<div id="diceImage"> </div> <!-- Empty div to contain random dice image -->
+<button id="btn" type="button" onClick="rollDice();">Player 1 Roll the dice</button>
+</form>
+
+<script>
+function rollDice(){
+	var dice = ["Roll1.jpeg","Roll2.jpeg","Roll3.jpeg","Roll4.jpeg","Roll5.jpeg","Roll6.jpeg"];
+	var roll = Math.ceil(Math.random() * dice.length);
+	roll--; // Javascript indexes start at 0 - the count is 6 items, so subtract 1 to get item in range 0-5
+	document.getElementById("diceImage").innerHTML="<img src='"+dice[roll]+"'>";
+	document.getElementByID('btn').innerHTML = "Player 2 Roll the dice";
+}
+rollDice();
+</script>
+
+</body>
+</html>
