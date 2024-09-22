@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <script>
-        function mytable(){
-            var s = ""
-            var multiply = document.getElementById(taketime)
-            var rows = document.getElementById(rowsf)
-            
-            for(var i = 1; i < (rowsf+1); i++){
-                s = s + i + " times" + taketime+ "equals " + (i*taketime) + "<br>"
+    <head>
+        <script>
+            function mytable() {
+                var s = ""; 
+                var multiply = parseInt(document.getElementById("taketime").value); 
+                var rows = parseInt(document.getElementById("rowsf").value); 
+
+                
+                for (var i = 1; i <= rows; i++) {
+                    s += i + " times " + multiply + " equals " + (i * multiply) + "<br>";
+                }
+
+                
+                document.getElementById("table").innerHTML = s;
+                return false; 
             }
-            var myElement = document.getElementById("table")
-            myElement.innerHTML = s
-            return false
-        }
-    </script>
+        </script>
+    </head>
 <body>
+    
     <form>
-        Number to multiply by
-        <input type = "text" id="taketime"></input>
-        
+        Number to multiply by:
+        <input type="text" id="taketime">
     </form>
 
+    
     <form>
-        Number of times you want to times it by:
-        <input type = "text" id="rowsf"></input>
-        
+        Number of times you want to multiply:
+        <input type="text" id="rowsf">
     </form>
+
     
     <form onsubmit="return mytable()"> 
         Final calculation:
-        <input type="submit"></input>
+        <input type="submit" value="Calculate">
     </form>
-    My Table:
-    <p id="table">
 
-
-
-    </p>
+    
+    Times Table:
+    <p id="table"></p>
 </body>
 </html>
