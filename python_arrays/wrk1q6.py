@@ -28,7 +28,8 @@ def intitialise(grid):
 
 park = []
 park = intitialise(park)
-print("where do you want to park you car? ")
-reg = str(input("enter registration: "))
-park = parksACar(park,reg)
-print(park)
+while True:
+    print("where do you want to park you car? ")
+    reg = str(input("enter registration: "))
+    park = parksACar(park,reg)
+    print(park)
