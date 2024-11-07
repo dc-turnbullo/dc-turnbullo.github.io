@@ -8,20 +8,26 @@ def fibonacci(n):
         return 1 
     return fibonacci(n-1) + fibonacci(n-2) 
 
-def fib (n): 
-    if( n == 0):
-        return 0
+def fib(n):
+    f = []
+    a = 0
+    b = 1
+    if n == 0 or n == 1:
+        print(n)
     else:
-        x = 0
-        y = 1
-        for i in range(1,n):
-            z = (x + y)
-            x = y
-            y = z
-            return y
+        f.append(a)
+        f.append(b)
+        while len(f) != n:
+            temp = a + b
+            f.append(temp)
+            a = b
+            b = temp
 
-for i in range(10):
-    print (fib(i))
+    print (f)
+
+
+
+
 
 
 
@@ -30,7 +36,7 @@ for i in range(10):
 
 start = time.time()
 #num = fibonacci(100)
-num = fib(10)
+num = fibonacci(40)
 end = time.time()
 print(end-start)
 
