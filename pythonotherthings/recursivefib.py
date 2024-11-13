@@ -24,6 +24,7 @@ def fib(n):
             b = temp
 
     print (f)
+    return f
 
 
 
@@ -36,7 +37,8 @@ def fib(n):
 
 start = time.time()
 #num = fibonacci(100)
-num = fibonacci(40)
+num = fib(4300)
 end = time.time()
-print(end-start)
+print(f"the time taken is: {end-start} seconds")
+print(num[5])
 
