@@ -40,5 +40,5 @@ start = time.time()
 num = fib(4300)
 end = time.time()
 print(f"the time taken is: {end-start} seconds")
-print(num[5])
+print(num[4200])
 
