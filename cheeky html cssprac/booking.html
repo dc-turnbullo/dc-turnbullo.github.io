@@ -11,14 +11,14 @@
 <body>
   <div>
     <h2>Book Your Seat</h2>
-    <form id="seatForm" action="server.html" method="get">
-      <label for="row">Row (1–30):</label>
+    <form id="seatForm" action="server.html" method="get" onsubmit="return validateForm()">
+      <label for="row">Row (1-30):</label>
       <input type="text" id="row" name="row" required><br>
 
 
-      <label for="seat">Seat (A–F):</label>
+      <label for="seat">Seat (A-F):</label>
       <input type="text" id="seat" name="seat" required><br>
-        
+
 
       <button type="submit">Book Seat</button>
       <p id="errorMsg"></p>
@@ -27,7 +27,24 @@
 
   <script>
     function validateForm() {
-      return false;
+        seat = document.getElementById("seat").value;
+        row = document.getElementById("row").value;
+        const validseats =["A","B","C","D","E","F"]
+        rowcheck = true
+        seatcheck = false
+        if (row <1 || row > 30){
+            rowcheck = false
+        }else if(validseats.includes(seat)){
+            seatcheck = true
+        }
+        if ((rowcheck && seatcheck) == true){
+            return true
+        }else{
+            document.getElementById("errorMsg").innerHTML = "Please select a valid input...";
+            return false
+        }
+        
+      
     }
   </script>
 </body>
